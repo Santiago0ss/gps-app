@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width userscalable=0">
-    <style rel="stylesheet" href="style.css"></style>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="style.css"></link>
     <script src="script.js"></script>
-    <title>Document</title>
+    <title>GPS APP</title>
 </head>
 <body onload="main()">
-    <div id="loc"></div>
-    <button id="aBtn" onclick="setA()">A</button>
-    <button id="bBtn" onclick="setB()">B</button>
-    <div id="info"></div>
-    <div id="intructions">
-        Presiona A y B para actualizarlos a tu posición actual.
+    <div class="verticalContainer">
+        <div id="loc"></div>
+        <div class="horizontalContainer">
+            <button id="aBtn" onclick="setA()">A</button>
+            <div id="info"></div>
+            <button id="bBtn" onclick="setB()">B</button>
+        </div>
+        <div id="instructions">
+            Presiona A y B para actualizarlos a tu posición actual.
+        </div>
     </div>
 </body>
 </html>

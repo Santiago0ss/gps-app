@@ -19,8 +19,8 @@ function main() {
 
 function onLocationUpdate(event) {
     CURRENT_LOCATION = event.coords;
-    document.getElementById("loc").innerHTML = "Tu ubicación:<br>Lat: "+CURRENT_LOCATION.latitude+
-    "<br>Lon: "+CURRENT_LOCATION.longitude;
+    document.getElementById("loc").innerHTML = "Tu ubicación:<br><span class='locFont'>Lat: " + CURRENT_LOCATION.latitude.toFixed(5) +
+        "<br>Lon: " + CURRENT_LOCATION.longitude.toFixed(5)+"</span>";
 }
 
 function onError(err) {
@@ -39,17 +39,19 @@ function setB() {
 
 function updateinfo() {
     if(A != null) {
-        document.getElementById("aBtn").innerHTML = A.latitude + 
-        "<br>"+ A.longitude;
+        document.getElementById("aBtn").innerHTML = A.latitude.toFixed(4) + 
+            "<br>" + A.longitude.toFixed(4);
+        document.getElementById("aBtn").classList.add("locFont");
     }
     if(B != null) {
-        document.getElementById("bBtn").innerHTML = B.latitude +
-        "<br>" + B.longitude;
+        document.getElementById("bBtn").innerHTML = B.latitude.toFixed(4) +
+        "<br>" + B.longitude.toFixed(4);
+        document.getElementById("bBtn").classList.add("locFont");
     }
     if(A != null && B != null) {
         let dist = getDistance(A, B);
         document.getElementById("info").innerHTML =
-        "distance: "+dist+" meters";
+        "distancia<br>--------------------------<br>"+Math.round(dist)+" metros";
     }
 }
 
